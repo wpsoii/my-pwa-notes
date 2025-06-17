@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA 笔记应用</title>
+    <meta name="theme-color" content="#4CAF50"/>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引用 Manifest 文件 -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>PWA 笔记应用</h1>
+        <div class="input-area">
+            <input type="text" id="note-input" placeholder="输入一条新笔记...">
+            <button id="add-note-btn">添加</button>
+        </div>
+        <ul id="notes-list">
+            <!-- 笔记将在这里显示 -->
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // 注册 Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker 注册成功:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker 注册失败:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

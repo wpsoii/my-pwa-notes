@@ -1,0 +1,21 @@
+{
+    "name": "PWA 笔记应用",
+    "short_name": "PWA笔记",
+    "description": "一个简单的渐进式网络笔记应用",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
